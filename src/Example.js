@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react'
 import Board from './Board'
-import Box from './Box'
 export default function Container() {
   return (
     <div>
