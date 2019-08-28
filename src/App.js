@@ -1,15 +1,15 @@
-import React from "react";
-import { DndProvider } from "react-dnd";
-import HTML5Backend from "react-dnd-html5-backend";
-import Example from "./Example";
-function App() {
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import FormTemplate from './pages/form-template/form-template.component'
+const App = () => {
   return (
-    <div className="App">
-      <DndProvider backend={HTML5Backend}>
-        <Example />
-      </DndProvider>
+    <div>
+      <Switch>
+        <Route path="/form-template" component={FormTemplate} />
+        <Redirect to="/form-template" />
+      </Switch>
     </div>
   );
-}
+};
 
 export default App;
