@@ -1,7 +1,18 @@
 import React from "react";
-import {FormGroup,Label,Input} from "reactstrap";
-import FormFieldTypes from "../../ItemTypes";
+import { FormGroup, Label, Input } from "reactstrap";
+import ControlTypes from "../../control.types";
+import WrapDrag from "./wrap-drag.component";
 const Textbox = props => {
+  return (
+    <WrapDrag>
+        <FormGroup>
+          <Label for="textbox">Textbox</Label>
+          <Input />
+        </FormGroup>
+    </WrapDrag>
+  );
+};
+const Combobox = props => {
   return (
     <FormGroup>
       <Label for="textbox">Textbox</Label>
@@ -10,5 +21,5 @@ const Textbox = props => {
   );
 };
 export default {
-  [FormFieldTypes.INPUT_TEXT]: Textbox
+  [ControlTypes.TEXT_BOX]: Textbox,
 };

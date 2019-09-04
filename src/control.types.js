@@ -4,6 +4,6 @@ const ControlTypes = {
     DATE_PICKER:"datepicker",
     CHECK_BOX:"checkbox",
     TEXT_AREA:"textarea",
-    IMAGE:"image"
+    IMAGE:"image",
 }
 export default ControlTypes;

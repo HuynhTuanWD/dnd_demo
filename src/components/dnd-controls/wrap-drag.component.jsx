@@ -1,23 +1,23 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDrop, useDrag } from "react-dnd";
-import ItemTypes from "./ItemTypes";
+import DndTypes from "../dnd-controls/dnd.types";
 import uniqid from 'uniqid';
 import { Container, Col, Row } from 'reactstrap';
-import ControlTypes from "./DndControls/ControlTypes";
-const WrapDrag = ({children}) => {
+import ControlTypes from "../../control.types"
+const WrapDrag = ({ children }) => {
     const [{ isDragging }, drag] = useDrag({
-        item: { type: ItemTypes.BOARD, controlType: ControlTypes.INPUT_TEXT },
+        item: { type: DndTypes.BOARD, controlType: ControlTypes.TEXT_BOX },
         end: (item, monitor) => {
             const dropResult = monitor.getDropResult();
             if (item && dropResult) {
                 console.log("drop result", item);
-            }
+            }   
         },
         collect: monitor => ({
             isDragging: monitor.isDragging()
         })
     });
     const opacity = isDragging ? 0.4 : 1;
-    return <input type="text" ref={drag} style={{ ...InitInputTextStyle, opacity }} />;
+    return children({ref:{drag},style:{opacity:opacity}})
 }
 export default WrapDrag;
