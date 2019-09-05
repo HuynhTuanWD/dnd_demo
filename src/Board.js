@@ -13,9 +13,9 @@ const style = {
 };
 
 const Board = () => {
-  const ctnRef = useRef(null);
-  const [boxPos, setBoxPos] = useState([0, 0]);
   const [listEl, setListEl] = useState([]);
+  const [boxPos, setBoxPos] = useState([0, 0]);
+  const ctnRef = useRef(null);
   const [{ canDrop, isOver }, drop] = useDrop({
     accept: ItemTypes.BOARD,
     drop: (item, monitor) => {
